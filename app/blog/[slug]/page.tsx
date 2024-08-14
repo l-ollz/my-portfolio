@@ -1,7 +1,6 @@
 // import { Blog } from 'libs/microcms';
 import { Suspense, cache } from 'react';
 import { notFound } from 'next/navigation';
-import { CustomMDX } from 'app/components/mdx';
 import { getDetail } from 'libs/microcms';
 import parse from 'html-react-parser';
 

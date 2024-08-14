@@ -24,7 +24,6 @@
     "next-auth": "5.0.0-beta.3",
     "next-mdx-remote": "^5.0.0",
     "postcss": "^8.4.41",
-    "postgres": "^3.4.4",
     "react": "^19.0.0-rc-2d2cc042-20240809",
     "react-dom": "^19.0.0-rc-2d2cc042-20240809",
     "react-tweet": "3.2.1",
