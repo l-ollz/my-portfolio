@@ -1,10 +1,18 @@
 export default function Page() {
   return (
-    <section>
-      <h1 className="font-medium text-2xl mb-8 tracking-tighter">my portfolio</h1>
-      <p className="prose prose-neutral dark:prose-invert">
-        This is your new portfolio.
-      </p>
-    </section>
+    <>
+      <picture className="bl_bg">
+        <source
+          srcSet="/wp8338140-jackson-pollock-desktop-wallpapers-small.jpg"
+          media="(max-width: 960px)"
+        />
+        <img
+          src="/wp8338140-jackson-pollock-desktop-wallpapers.jpg"
+          alt="Jackson Pollock Desktop Wallpaper"
+          className="w-full h-auto bl_bg_image"
+        />
+      </picture>
+      {/* <>SP用の要素入れる</> */}
+    </>
   );
 }

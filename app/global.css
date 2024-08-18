@@ -35,6 +35,23 @@ html {
   min-width: 360px;
 }
 
+.bl_bg {
+  height: fit-content;
+  object-fit: cover;
+}
+
+.bl_bg_image {
+  width: 100%;
+}
+
+@media (max-width: 960px) {
+  .bl_bg_image {
+    margin: auto;
+    width: 100%;
+    aspect-ratio: 780 / 1086;
+  }
+}
+
 .prose .anchor {
   @apply absolute invisible no-underline;
 
