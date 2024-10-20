@@ -75,38 +75,40 @@ export function Navbar() {
       </div>
 
       {/* ハンバーガーメニュー展開時のメニュー */}
-      {isOpen && (
-        <div className="md:hidden mt-4 bg-[#111010] text-white px-6 py-4 space-y-4">
-          <ul className="flex flex-col space-y-4 text-xl">
-            {Object.entries(navItems).map(([path, { name }]) => (
-              <li key={path}>
-                <Link
-                  href={path}
-                  className="hover:text-gray-300 transition-colors"
-                  onClick={toggleMenu} // メニュークリックで閉じる
-                >
-                  {name}
-                </Link>
-              </li>
-            ))}
-          </ul>
+      <div
+        className={`${
+          isOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
+        } md:hidden overflow-hidden transition-all duration-500 ease-in-out bg-[#111010] px-6`}
+      >
+        <ul className="flex flex-col space-y-4 text-2xl">
+          {Object.entries(navItems).map(([path, { name }]) => (
+            <li key={path}>
+              <Link
+                href={path}
+                className="hover:text-gray-300 transition-colors"
+                onClick={toggleMenu}
+              >
+                {name}
+              </Link>
+            </li>
+          ))}
+        </ul>
 
-          <ul className="flex space-x-4 mt-6 justify-center">
-            {socialLinks.map(({ href, icon: Icon }) => (
-              <li key={href}>
-                <a
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-gray-400 transition-colors"
-                >
-                  <Icon size={28} />
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
+        <ul className="flex space-x-4 mt-6 justify-center">
+          {socialLinks.map(({ href, icon: Icon }) => (
+            <li key={href}>
+              <a
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-gray-400 transition-colors"
+              >
+                <Icon size={28} />
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
     </header>
   );
 }
