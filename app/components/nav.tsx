@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { FaTwitter, FaLinkedin, FaFacebook, FaInstagram } from 'react-icons/fa';
+import { FaTwitter, FaGithub, FaInstagram } from 'react-icons/fa';
 import { FiMenu, FiX } from 'react-icons/fi'; // ハンバーガーと閉じるアイコン
 
 const navItems = {
@@ -13,10 +13,9 @@ const navItems = {
 };
 
 const socialLinks = [
-  { href: 'https://www.twitter.com/AdhamDannaway', icon: FaTwitter },
-  { href: 'https://au.linkedin.com/in/adhamdannaway', icon: FaLinkedin },
-  { href: 'https://www.facebook.com/ilikeadham', icon: FaFacebook },
-  { href: 'https://www.instagram.com/adham.dannaway', icon: FaInstagram },
+  { href: 'https://www.twitter.com/jank_lollz404', icon: FaTwitter },
+  { href: 'https://github.com/l-ollz', icon: FaGithub },
+  { href: 'https://www.instagram.com/ryogo404', icon: FaInstagram },
 ];
 
 export function Navbar() {
