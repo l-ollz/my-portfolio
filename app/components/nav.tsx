@@ -8,7 +8,7 @@ import { FiMenu, FiX } from 'react-icons/fi'; // ハンバーガーと閉じる�
 const navItems = {
   '/': { name: 'home' },
   '/work': { name: 'work' },
-  '/kairanban': { name: 'kairanban' },
+  '/blog': { name: 'blog' },
   '/guestbook': { name: 'guestbook' },
 };
 
@@ -37,7 +37,7 @@ export function Navbar() {
           </button>
 
           <Link href="/" className="logo text-3xl font-bold">
-            LOGO
+            R.H
           </Link>
         </div>
 
