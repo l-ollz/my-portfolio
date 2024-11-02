@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import { getDetail } from 'libs/microcms';
 import parse from 'html-react-parser';
 
-export default async function Kairanban({ params }) {
+export default async function Blog({ params }) {
   const contentId = params.slug;
   let post = await getDetail(contentId);
   if (!post) {
