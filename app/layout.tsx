@@ -8,6 +8,8 @@ export const metadata: Metadata = {};
 
 const cx = (...classes) => classes.filter(Boolean).join(' ');
 
+const NAVBAR_HEIGHT = 68;
+
 export default function RootLayout({
   children,
 }: {
@@ -26,7 +28,7 @@ export default function RootLayout({
       <body>
         <main>
           <Navbar />
-          {children}
+          <div style={{ marginTop: `${NAVBAR_HEIGHT}px` }}>{children}</div>
         </main>
       </body>
     </html>
