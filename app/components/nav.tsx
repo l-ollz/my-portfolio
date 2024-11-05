@@ -4,11 +4,13 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { FaTwitter, FaGithub, FaInstagram } from 'react-icons/fa';
 import { FiMenu, FiX } from 'react-icons/fi'; // ハンバーガーと閉じるアイコン
+import { Link as ScrollLink } from 'react-scroll'; // 追加
 
 const navItems = {
   '/': { name: 'home' },
-  '/work': { name: 'work' },
+  // '/work': { name: 'work' },
   '/blog': { name: 'blog' },
+  '#about': { name: 'about' },
   '/guestbook': { name: 'guestbook' },
 };
 
@@ -22,6 +24,9 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false); // ハンバーガーメニューの状態管理
 
   const toggleMenu = () => setIsOpen(!isOpen);
+
+  // ナビゲーションバーの高さに応じたオフセットを設定
+  const navbarHeight = 68;
 
   return (
     <header className="w-full fixed top-0 bg-[#111010] text-white py-4 px-6 z-50">
@@ -46,12 +51,24 @@ export function Navbar() {
           <ul className="flex space-x-8 text-xl">
             {Object.entries(navItems).map(([path, { name }]) => (
               <li key={path}>
-                <Link
-                  href={path}
-                  className="hover:text-gray-300 transition-colors"
-                >
-                  {name}
-                </Link>
+                {path.startsWith('#') ? (
+                  <ScrollLink
+                    to={path.substring(1)}
+                    smooth={true}
+                    duration={500}
+                    offset={-navbarHeight} // オフセットを設定
+                    className="hover:text-gray-300 transition-colors cursor-pointer"
+                  >
+                    {name}
+                  </ScrollLink>
+                ) : (
+                  <Link
+                    href={path}
+                    className="hover:text-gray-300 transition-colors"
+                  >
+                    {name}
+                  </Link>
+                )}
               </li>
             ))}
           </ul>
@@ -83,13 +100,26 @@ export function Navbar() {
         <ul className="flex flex-col space-y-4 text-2xl">
           {Object.entries(navItems).map(([path, { name }]) => (
             <li key={path}>
-              <Link
-                href={path}
-                className="hover:text-gray-300 transition-colors"
-                onClick={toggleMenu}
-              >
-                {name}
-              </Link>
+              {path.startsWith('#') ? (
+                <ScrollLink
+                  to={path.substring(1)}
+                  smooth={true}
+                  duration={500}
+                  offset={-navbarHeight} // オフセットを設定
+                  className="hover:text-gray-300 transition-colors cursor-pointer"
+                  onClick={toggleMenu}
+                >
+                  {name}
+                </ScrollLink>
+              ) : (
+                <Link
+                  href={path}
+                  className="hover:text-gray-300 transition-colors"
+                  onClick={toggleMenu}
+                >
+                  {name}
+                </Link>
+              )}
             </li>
           ))}
         </ul>
