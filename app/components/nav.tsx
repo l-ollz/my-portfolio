@@ -10,7 +10,7 @@ const navItems = {
   '/': { name: 'home' },
   // '/work': { name: 'work' },
   '/blog': { name: 'blog' },
-  '#about': { name: 'about' },
+  '/#about': { name: 'about' },
   // '/guestbook': { name: 'guestbook' },
 };
 
