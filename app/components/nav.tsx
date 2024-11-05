@@ -11,7 +11,7 @@ const navItems = {
   // '/work': { name: 'work' },
   '/blog': { name: 'blog' },
   '#about': { name: 'about' },
-  '/guestbook': { name: 'guestbook' },
+  // '/guestbook': { name: 'guestbook' },
 };
 
 const socialLinks = [
