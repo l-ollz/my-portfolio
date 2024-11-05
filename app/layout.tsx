@@ -4,7 +4,6 @@ import './global.css';
 import { GeistSans } from 'geist/font/sans';
 import { GeistMono } from 'geist/font/mono';
 import { Navbar } from './components/nav';
-import styled from 'styled-components';
 
 const cx = (...classes) => classes.filter(Boolean).join(' ');
 

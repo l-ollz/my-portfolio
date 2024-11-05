@@ -7,12 +7,39 @@ import * as THREE from 'three';
 const Container = styled.div`
   max-width: 1032px;
   margin-inline: auto;
+  padding: 8px 16px 0;
 `;
 const FlexContainer = styled.div`
   display: flex;
   margin-inline: auto;
   width: 600px;
   gap: 24px;
+
+  @media (max-width: 834px) {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+`;
+
+const ImageContainer = styled.div`
+  width: 100%;
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  @media (max-width: 834px) {
+    display: flex;
+    justify-content: center;
+  }
+`;
+
+const TextContainer = styled.div`
+  @media (max-width: 834px) {
+    text-align: center;
+  }
 `;
 
 export default function Page() {
@@ -38,7 +65,7 @@ export default function Page() {
     // グリッドとドットマテリアルの設定
     const gridMaterial = new THREE.LineBasicMaterial({ color: 0x00ffcc });
     const gridGeometry = new THREE.BufferGeometry();
-    const gridPoints: number[] = []; // number[] 型で宣言
+    const gridPoints: number[] = [];
 
     // グリッド作成
     for (let i = -50; i <= 50; i += 5) {
@@ -53,7 +80,7 @@ export default function Page() {
     const grid = new THREE.LineSegments(gridGeometry, gridMaterial);
     scene.add(grid);
 
-    // ドット（ノイズ）作成 - useEffect 内でランダムデータを生成
+    // ドット（ノイズ）作成
     const dotGeometry = new THREE.BufferGeometry();
     const dotCount = 1000;
     const positions = new Float32Array(dotCount * 3);
@@ -130,10 +157,10 @@ export default function Page() {
           about me
         </h2>
         <FlexContainer>
-          <div className="w-full">
+          <ImageContainer>
             <img src="/icon.png" alt="icon" width={253} height={253} />
-          </div>
-          <div>
+          </ImageContainer>
+          <TextContainer>
             <p>
               北海道出身の26歳エンジニア。弘前大学を卒業後、現在はフロントエンドエンジニアとして活動。大学時代に独学でWEBについて学びWEB制作会社でのアルバイトからキャリアをスタートし現在に至ります。多岐にわたるプロジェクトに参加し、フロントエンド開発を中心に、バックエンドや運用保守など幅広く業務を経験してきました。
             </p>
@@ -146,7 +173,7 @@ export default function Page() {
               wide range of work including front-end development, back-end, and
               operation and maintenance.
             </p>
-          </div>
+          </TextContainer>
         </FlexContainer>
       </Container>
     </>
